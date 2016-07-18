@@ -13,7 +13,7 @@ In the file rbftrain.m we build a quadratic programming problem that we will be 
 
 Our next step is to take the coefficients found using rbftrain.m and use them to classify handwritten digits. That is done in rbf.classify which takes in as arguments the coefficients, a digit we want to classify and the two matrices train_samples (dataset we used for training) and test_samples(samples we wanna classify). It iterates over all test_samples and outputs 1 if the sample is the given digit and -1 otherwise.
 
-Now, it is time to put everything we did in practise. That is going to be done using two techniques. The one-vs-all and the one-vs-one. The former is found in the rbfova.m file and runs the train and classify ten times each, once for every possible digit. The latter is found in the rbfovo.m and runs 45 pairs of digits and classify each sample as either one. Then each sample's final value is the one of the most occurring digit given from each of these 45 classifiers.
+Now, it is time to put everything we did in practise. That is going to be done using two techniques. The one-vs-all and the one-vs-one. The former is found in the rbfova.m file and runs the train and classify ten times each, once for every possible digit, and classifies is it as the one it looks like the most. The latter is found in the rbfovo.m and runs all 45 pairs of digits and classifies each sample as either one. Then each sample's final value is the one of the most occurring digit given from each of these 45 classifiers.
 
 
 ##Conclusion-Results
